@@ -138,15 +138,76 @@ data.forEach(
     function(line) 
     {console.log(line); 
     });
-    
+
 //Typescript Fat Arrow
 var dataTypescript = ['wonder','louise','pepper'];
 data.forEach(
-
+    (line) =>
+    console.log(line)
+    );
 )
 </pre>
-                
+<p>Another great improvement is that the => syntax shares the 'this' as the surrounding code
+<br>no longer is needed to declare [var self=this;] to call other properties of an object.
+</p>
+<pre>
+    //ES5 usual case of declaring a [var self = this;]
+    var daniel = {
+        name: 'Daniel',
+        laptops: ['hp','acer'],
+        printLaptops: function() {
+            var self = this;
+            this.laptops.forEach(function(l) {
+                //this.name is undefined ergo the fix
+                console.log(self.name+" uses a "+l);
+            });
+        }
+    };
 
+    //Typescript
+    var kathi = {
+        name: 'Kathi',
+        laptops: ['mac','compaq'],
+        printLaptops: function() {
+            this.laptops.forEach( (l) => {
+                console.log(this.name+" uses a "+l);
+            });
+        }
+    };
+</pre>
+<h3>Template Strings</h3>
+<p>In ES6 new template strings were introduced. The two great features of template strings are<br>
+        1. Variables within strings (without being forced to concatenate with +) and<br>
+        2. Multi-line strings</p>
+<pre>
+    //Variables within strings
+    var name = 'Louise';
+    var surname = 'Lane';
+
+    //interpolate a string
+    var hiThere = `Hi there Ms. ${surname}`;
+
+    console.log(hiThere);
+</pre>                
+<p>you must enclose your string in backticks not single or double
+quotes.</p>
+<pre>
+    //Multiline strings great for templates in Angular!!!
+    var fullName = `
+    < div>
+        < h2>Ms Lane< /h2>
+        < h3>Louisa Lane< /h3>
+    < /div>
+    `;
+</pre>
+<p>
+        There are a variety of other features in TypeScript/ES6 such as:
+        <br>• Interfaces
+        <br>• Generics
+        <br>• Importing and Exporting Modules
+        <br>• Decorators
+        <br>• Destructuring
+</p>
 
 
     <!--
