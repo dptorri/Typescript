@@ -9,8 +9,57 @@
 <body>
     <h1>Typescript - Tutorial</h1>
     <h2>Built-int types</h2>
+    <p>The new TypeScript syntax is a natural evolution from ES5, we still use var but now we can
+            optionally provide the variable type along with its name:</p>
+    <code>var myName: string;</code>
+    <p>When declaring functions we can use types for arguments and return values:</p>
+    <code>function hiThere(name: string): string {
+        return "Hi there "+ name;
+    }
+    </code>
+    <p>here the argument <em>(name: string)</em> name is a string and the return value of the function<em>' : string '</em> is also a string</p>
+    <h2>Variable types</h2>
+    <h3>String</h3>
+    <code>var nameHero : string = 'Ironman';</code>
+    <h3>Number</h3>
+    <p>Represented by default as float</p>
+    <code>var suitsHero : number = '46';</code>
+    <h3>Boolean</h3>
+    <code>var isMarried : boolean = false;</code>
+    <h3>Array</h3>
+    <p>Array are declared with the array type, but also the type of the objects inside must be defined</p>
+    <code>var heroEnemies : Array<string> = ['ultron', 'thanos'];<br>
+        var heroEnemies : string[] = ['ultron', 'thanos'];<br>
+    </code>
+    <h3>Enums</h3>
+    <p>fix list the roles a hero can have</p>
+    <code>enum Role {Billionare,Inventor,Playboy}<br>
+    var role: Role = Role.Inventor</code>
+    <p>the default value is 0, so it would be 0,1,2 in our example, but it can be increased with Inventor = 5</p>
+    <code>enum Role {Billionare,Inventor = 5,Playboy}<br>
+        var role2 : Role = Role.Playboy;<br>
+    console.log(role2);// 6</code>
+    <p>Note that Billionare got 0 as the default key as increases only from Inventor onwards</p>
+    <h3>Any</h3>
+    <p>The default type if none is given</p>
+    <code>var something : any = 'asrting';</code>
+    <h4>Void</h4>
+    <p>Useful in functions that do not return a value. (e.g. functions that set a variable)</p>
+    <code>function setName(name: string): void {<br>
+    this.nameHero = name;<br>
+    }</code>
+
+
+
+
+
+
+
+
+
+    <!--
     <div id="root">
         </div>
-        <script src="bundle.js"></script>
+        <script src="bundle.js"></script>-->
 </body>
 </html>
