@@ -46,14 +46,106 @@
     <h4>Void</h4>
     <p>Useful in functions that do not return a value. (e.g. functions that set a variable)</p>
     <code>function setName(name: string): void {<br>
-    this.nameHero = name;<br>
+        &emsp;&emsp;&emsp;this.nameHero = name;<br>
     }</code>
+    <h2>Classes</h2>
+    <p>we use the class keyword, a name and a body. Classes can have properties, methods and constructors</p>
+    <code>class Villain{<br>}</code>
+    <h3>Properties</h3>
+    <p>They define a data attached to an instance of a class</p>
+    <code>class Villain{<br>
+    &emsp;&emsp;&emsp;name: string;<br>
+    &emsp;&emsp;&emsp;power: string;<br>
+    &emsp;&emsp;&emsp;age: number;<br>
+    }</code>
+    <h3>Methods</h3>
+    <code>greet(){<br>
+    &emsp;&emsp;&emsp;console.log('Hello '+this.name);
+    <br>}</code>
+    <p>in this case we are returning void as a return type of this function, which is a valid option.
+        <br>You can declare a variable and instatiate on the same line <br>
+    </p>
+    <code>var o : villain = new villain();</code>
+    <h3>Contructors</h3>
+    <p>If not declared the constructor will be created automatically</p>
+    <code>class villain {<br>&emsp;&emsp;&emsp;constructor(){<br>&emsp;&emsp;&emsp;}<br>}<br>var v = new villain(); </code>
+    <p>in Typescript you can only have one construtor per class. In ES6 you can have more as long as they have a different number of parameters</p>
+    <pre>
+    class Villain {
+           name: string;
+           power: string;
+           age: number;
+        
+            constructor(name: string, power:string, age: number) {
+                this.name = name;
+                this.power = power;
+                this. age = age;
+            }
+            stats() {
+                console.log(
+                    " Hero name : ",this.name,
+                    " Hero power : ",this.power,
+                    " Hero age :",this.age
+                    );
+            }
+            bornIn(thisyear: number): number {
+                return thisyear-this.age;
+            }
+        
+    }
+    </pre>
+    <h3>Inheritance</h3>
+    <p>TypeScript fully supports inheritance and, unlike ES5, it’s built into the core language. Inheritance
+            is achieved through the extends keyword.</p>
+    <pre>class Report {
+            data: Array<string>;
+                constructor(data: Array<string>) {
+                    this.data = data;
+                }
+                run() {
+                    this.data.forEach(function(line) { console.log(line); });
+                }
+            }
+        </pre>
+        <p>This report has a property data which is an Array of strings. When we call run we loop over each
+                element of data and print them out using console.log<br>
+                To reuse that behavior from the Report class we can use inheritance with the extends keyword:</p>
+                <pre>
+    class TabbedReport extends Report {
+        headers: Array<string>;
+            constructor(headers: string[], values: string[]) {
+                super(values)
+                this.headers = headers;
+            }
+        
+        run() {
+            console.log(this.headers);
+            super.run();
+        }
+    }
+                </pre>
+<h3>Utilities</h3>
+<p>ES6, and by extension TypeScript provides a number of syntax features that make programming
+   really enjoyable. Two important ones are:<br>
+   • fat arrow function syntax<br>
+   • template strings<br>
+In ES5
+</p>
+<pre>
+//ES5 example
+var dataES5 = ['black widow','storm','jane'];
+data.forEach(
+    function(line) 
+    {console.log(line); 
+    });
+    
+//Typescript Fat Arrow
+var dataTypescript = ['wonder','louise','pepper'];
+data.forEach(
 
-
-
-
-
-
+)
+</pre>
+                
 
 
 
